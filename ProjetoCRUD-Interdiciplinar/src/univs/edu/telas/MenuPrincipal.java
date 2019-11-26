@@ -23,6 +23,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     
     public void nivelAcesso(){
         if(!funcionario.getCargo().equals("Administrador")){
+            jmFuncionario.setVisible(false);
             jmUsuario.setVisible(false);
             
         }
@@ -43,7 +44,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jmCadastros = new javax.swing.JMenu();
         jmUsuario = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        jmFuncionario = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -62,13 +63,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jmCadastros.add(jmUsuario);
 
-        jMenuItem3.setText("Funcionário");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jmFuncionario.setText("Funcionário");
+        jmFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                jmFuncionarioActionPerformed(evt);
             }
         });
-        jmCadastros.add(jMenuItem3);
+        jmCadastros.add(jmFuncionario);
 
         jMenuItem2.setText("Cliente");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -112,11 +113,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
        tela.setVisible(true);
     }//GEN-LAST:event_jmUsuarioActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void jmFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmFuncionarioActionPerformed
         TelaFuncionario tela = new TelaFuncionario();
         tela.setVisible(true);
         
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_jmFuncionarioActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         TelaCliente tela = new TelaCliente();
@@ -168,11 +169,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JMenu jmCadastros;
+    private javax.swing.JMenuItem jmFuncionario;
     private javax.swing.JMenuItem jmUsuario;
     // End of variables declaration//GEN-END:variables
 }
