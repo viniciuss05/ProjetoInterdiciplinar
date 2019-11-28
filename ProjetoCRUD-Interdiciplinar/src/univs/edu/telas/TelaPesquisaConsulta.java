@@ -6,28 +6,28 @@
 package univs.edu.telas;
 
 import javax.swing.JOptionPane;
-import univs.edu.funcionario.Funcionario;
-import univs.edu.funcionario.FuncionarioDAO;
-import univs.edu.funcionario.FuncionarioTableModel;
+import univs.edu.consulta.Consulta;
+import univs.edu.consulta.ConsultaDAO;
+import univs.edu.consulta.ConsultaTableModel;
 
 /**
  *
  * @author LABORATORIO 01
  */
-public class TelaPesquisaFuncionario extends javax.swing.JFrame {
+public class TelaPesquisaConsulta extends javax.swing.JFrame {
 
-    FuncionarioDAO dao = new FuncionarioDAO();
-    Funcionario funcionario = new Funcionario();
+    ConsultaDAO dao = new ConsultaDAO();
+    Consulta consulta = new Consulta();
     
   
-    public TelaPesquisaFuncionario() {
+    public TelaPesquisaConsulta() {
         initComponents();
         atualizarTabela();
     }
 
     public void atualizarTabela(){
-        FuncionarioTableModel tm = new FuncionarioTableModel(dao.ListarFuncionarios());
-        tabelaFuncionario.setModel(tm);
+        ConsultaTableModel tm = new ConsultaTableModel(dao.ListarConsultas());
+        tabelaConsulta.setModel(tm);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,7 +43,7 @@ public class TelaPesquisaFuncionario extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabelaFuncionario = new javax.swing.JTable();
+        tabelaConsulta = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -74,7 +74,7 @@ public class TelaPesquisaFuncionario extends javax.swing.JFrame {
             }
         });
 
-        tabelaFuncionario.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaConsulta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -85,7 +85,7 @@ public class TelaPesquisaFuncionario extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(tabelaFuncionario);
+        jScrollPane1.setViewportView(tabelaConsulta);
 
         jButton1.setText("Excluir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -169,32 +169,32 @@ public class TelaPesquisaFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_tfLoginActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int linha = tabelaFuncionario.getSelectedRow();
+        int linha = tabelaConsulta.getSelectedRow();
         if(linha == -1){
             JOptionPane.showMessageDialog(null,"Selecione uma linha");
-        }else if(JOptionPane.showConfirmDialog(null,"Deseja realmente excluir este funcionario?", "Excluir funcionario", JOptionPane.YES_NO_OPTION)== JOptionPane.YES_OPTION){
-            funcionario = dao.pesquisar((int)tabelaFuncionario.getValueAt(linha,0));
-            dao.excluir(funcionario);
+        }else if(JOptionPane.showConfirmDialog(null,"Deseja realmente excluir este consulta?", "Excluir consulta", JOptionPane.YES_NO_OPTION)== JOptionPane.YES_OPTION){
+            consulta = dao.pesquisar((int)tabelaConsulta.getValueAt(linha,0));
+            dao.excluir(consulta);
             atualizarTabela();
-            JOptionPane.showMessageDialog(null,"Funcionario excluido");
+            JOptionPane.showMessageDialog(null,"Consulta excluido");
     }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        TelaFuncionario tela = new TelaFuncionario();
+        TelaConsulta tela = new TelaConsulta();
         tela.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-          int linha = tabelaFuncionario.getSelectedRow();
+          int linha = tabelaConsulta.getSelectedRow();
         if(linha == -1){
             JOptionPane.showMessageDialog(null,"Selecione uma linha");
         }else{
-             funcionario = dao.pesquisar((int)tabelaFuncionario.getValueAt(linha,0));
-             TelaFuncionario tela = new TelaFuncionario();
-             tela.funcionario = funcionario;
-             tela.preencherFuncionario();
+             consulta = dao.pesquisar((int)tabelaConsulta.getValueAt(linha,0));
+             TelaConsulta tela = new TelaConsulta();
+             tela.consulta = consulta;
+             
              tela.setVisible(true);
              dispose();
              
@@ -227,13 +227,13 @@ public class TelaPesquisaFuncionario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaPesquisaFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPesquisaConsulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaPesquisaFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPesquisaConsulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaPesquisaFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPesquisaConsulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPesquisaFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPesquisaConsulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -241,7 +241,7 @@ public class TelaPesquisaFuncionario extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaPesquisaFuncionario().setVisible(true);
+                new TelaPesquisaConsulta().setVisible(true);
             }
         });
     }
@@ -254,7 +254,7 @@ public class TelaPesquisaFuncionario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tabelaFuncionario;
+    private javax.swing.JTable tabelaConsulta;
     private javax.swing.JTextField tfLogin;
     // End of variables declaration//GEN-END:variables
 }

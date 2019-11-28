@@ -7,7 +7,7 @@ package univs.edu.telas;
 
 import java.util.List;
 import javax.swing.JOptionPane;
-import static univs.edu.funcionario.Funcionario_.usuario;
+
 import univs.edu.usuario.Usuario;
 import univs.edu.usuario.UsuarioDAO;
 import univs.edu.usuario.UsuarioTableModel;

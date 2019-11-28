@@ -26,21 +26,22 @@ import univs.edu.usuario.UsuarioDAO;
  *
  * @author LABORATORIO 01
  */
-public class telateste extends javax.swing.JFrame {
+public class TelaConsulta extends javax.swing.JFrame {
 
     UsuarioDAO dao = new UsuarioDAO();
     Usuario usu = new Usuario();
     List<Usuario> lista = new ArrayList<>();
-    List<Cliente> lista2 = new ArrayList<>();
-    List<Dentista> lista3 = new ArrayList<>();
     
-    ConsultaDAO dao4 = new ConsultaDAO();
+    List<Cliente> listaCliente = new ArrayList<>();
+    List<Dentista> listaDentista = new ArrayList<>();
+    
+    ConsultaDAO ConsultaDAO = new ConsultaDAO();
     Consulta consulta = new Consulta();
     
     ClienteDAO dao2 = new ClienteDAO();
     DentistaDAO dao3 = new DentistaDAO();
     
-    public telateste() {
+    public TelaConsulta() {
         initComponents();
         //carregarUsuarios();
         carregarClientes();
@@ -57,18 +58,18 @@ public class telateste extends javax.swing.JFrame {
   // }
     public void carregarClientes(){
       
-       lista2 = dao2.ListarClientes();
+       listaCliente = dao2.ListarClientes();
         
-        for (Cliente cliente : lista2) {
-            jcTeste2.addItem(cliente.getNome());
+        for (Cliente cliente : listaCliente) {
+            jcCliente.addItem(cliente.getNome());
         }
    }
       public void carregarDentistas(){
       
-       lista3 = dao3.ListarDentistas();
+       listaDentista = dao3.ListarDentistas();
         
-        for (Dentista dentista : lista3) {
-            jcTeste.addItem(dentista.getNome());
+        for (Dentista dentista : listaDentista) {
+            jcDentista.addItem(dentista.getNome());
         }
    }
     
@@ -78,18 +79,19 @@ public class telateste extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jcTeste = new javax.swing.JComboBox<>();
+        jcDentista = new javax.swing.JComboBox<>();
         jbSalvar = new javax.swing.JButton();
-        jcTeste2 = new javax.swing.JComboBox<>();
-        jCalendar1 = new com.toedter.calendar.JCalendar();
+        jcCliente = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jCalendar1 = new com.toedter.calendar.JCalendar();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jcTeste.addActionListener(new java.awt.event.ActionListener() {
+        jcDentista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcTesteActionPerformed(evt);
+                jcDentistaActionPerformed(evt);
             }
         });
 
@@ -100,15 +102,9 @@ public class telateste extends javax.swing.JFrame {
             }
         });
 
-        jcTeste2.addActionListener(new java.awt.event.ActionListener() {
+        jcCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcTeste2ActionPerformed(evt);
-            }
-        });
-
-        jCalendar1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jCalendar1MouseClicked(evt);
+                jcClienteActionPerformed(evt);
             }
         });
 
@@ -116,63 +112,77 @@ public class telateste extends javax.swing.JFrame {
 
         jLabel2.setText("Cliente");
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jcTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
-                .addComponent(jcTeste2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jbSalvar)
-                .addGap(159, 159, 159))
+                .addGap(29, 29, 29)
+                .addComponent(jcDentista, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
+                .addComponent(jcCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
             .addGroup(layout.createSequentialGroup()
-                .addGap(92, 92, 92)
-                .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(68, 68, 68)
+                .addGap(59, 59, 59)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addGap(85, 85, 85))
+                .addGap(72, 72, 72))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addComponent(jButton1)
+                        .addGap(51, 51, 51)
+                        .addComponent(jbSalvar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(125, 125, 125)
+                        .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(9, 9, 9)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jcTeste, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jcTeste2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jcDentista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                .addComponent(jbSalvar)
-                .addGap(39, 39, 39))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jbSalvar))
+                .addGap(0, 11, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jcTesteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcTesteActionPerformed
+    private void jcDentistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcDentistaActionPerformed
         
-    }//GEN-LAST:event_jcTesteActionPerformed
+    }//GEN-LAST:event_jcDentistaActionPerformed
 
     private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
-        if(!jcTeste.getSelectedItem().equals("") && !jcTeste2.getSelectedItem().equals(""))
+        if(!jcDentista.getSelectedItem().equals("") && !jcCliente.getSelectedItem().equals(""))
         {
-            consulta.setDentista((Dentista) jcTeste.getSelectedItem());
-            consulta.setCliente((Cliente) jcTeste2.getSelectedItem());
-            consulta.getData(jCalendar1.getDate());
-            dao4.salvar(consulta);
+            consulta.setDentista(listaDentista.get(jcDentista.getSelectedIndex()));
+            consulta.setCliente (listaCliente.get(jcCliente.getSelectedIndex()));
+            
+            consulta.setData(jCalendar1.getDate());
+            
+            ConsultaDAO.salvar(consulta);
             
             //funcionario.setSalario(Double.parseDouble(tfSalario.getText()));
 
@@ -185,9 +195,13 @@ public class telateste extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jCalendar1MouseClicked
 
-    private void jcTeste2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcTeste2ActionPerformed
+    private void jcClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcClienteActionPerformed
 
-    }//GEN-LAST:event_jcTeste2ActionPerformed
+    }//GEN-LAST:event_jcClienteActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        JOptionPane.showMessageDialog(null, jCalendar1.getDate());
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,13 +220,13 @@ public class telateste extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(telateste.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaConsulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(telateste.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaConsulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(telateste.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaConsulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(telateste.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaConsulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -220,17 +234,18 @@ public class telateste extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new telateste().setVisible(true);
+                new TelaConsulta().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton jbSalvar;
-    private javax.swing.JComboBox<String> jcTeste;
-    private javax.swing.JComboBox<String> jcTeste2;
+    private javax.swing.JComboBox<String> jcCliente;
+    private javax.swing.JComboBox<String> jcDentista;
     // End of variables declaration//GEN-END:variables
 }

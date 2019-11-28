@@ -27,10 +27,10 @@ public class Consulta {
    
     
     
-    @ManyToMany
+    @OneToOne
     private Cliente cliente;
     
-    @ManyToMany
+    @OneToOne
     private Dentista dentista;
 
     /**
@@ -92,7 +92,8 @@ public class Consulta {
     public void getData(Date date) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
 
+  
+ 
 
 }

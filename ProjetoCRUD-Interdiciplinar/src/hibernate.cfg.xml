@@ -18,6 +18,7 @@
         <mapping class="univs.edu.funcionario.Funcionario"/>
         <mapping class="univs.edu.cliente.Cliente"/>
         <mapping class="univs.edu.dentista.Dentista"/>
+        <mapping class="univs.edu.consulta.Consulta"/>
         
         
     </session-factory>
