@@ -9,7 +9,6 @@ import java.awt.Color;
 import java.awt.Point;
 import java.util.List;
 import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import univs.edu.funcionario.Funcionario;
 import univs.edu.funcionario.FuncionarioDAO;
@@ -45,9 +44,9 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jbEntrar = new javax.swing.JButton();
         jbSair = new javax.swing.JButton();
-        tfLogin = new univs.edu.outros.JTextFieldHint(new JTextField(), "user-icon", "Login");
+        tfLogin = new univs.edu.outros.JTextFieldHint(new JTextField(),"user-icon", "Nome");
         ;
-        tfSenha = new univs.edu.outros.JPassWordFieldHint(new JPasswordField(), "padlock", "Senha");
+        tfCPF = new univs.edu.outros.JTextFieldHint(new JTextField(),"padlock",  "CPF");
         ;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -143,11 +142,11 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
-        tfSenha.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        tfSenha.setForeground(new java.awt.Color(204, 204, 204));
-        tfSenha.addActionListener(new java.awt.event.ActionListener() {
+        tfCPF.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        tfCPF.setForeground(new java.awt.Color(204, 204, 204));
+        tfCPF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfSenha(evt);
+                tfCPF(evt);
             }
         });
 
@@ -161,7 +160,7 @@ public class TelaLogin extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tfLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jbEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jbSair, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -169,7 +168,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jbEntrar, jbSair, tfLogin, tfSenha});
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jbEntrar, jbSair, tfCPF, tfLogin});
 
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,7 +178,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addComponent(tfLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(tfSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tfCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addComponent(jbEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -257,8 +256,8 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_tfLogin
 
     private void jbEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEntrarActionPerformed
-        if(!tfLogin.getText().isEmpty()&& !tfSenha.getText().isEmpty())
-            funcionario = autenticarFunc(tfLogin.getText(), tfSenha.getText());
+        if(!tfLogin.getText().isEmpty()&& !tfCPF.getText().isEmpty())
+            funcionario = autenticarFunc(tfLogin.getText(), tfCPF.getText());
             if(funcionario != null){
                 MenuPrincipal menu = new MenuPrincipal(funcionario);
                 menu.setVisible(true);
@@ -270,9 +269,9 @@ public class TelaLogin extends javax.swing.JFrame {
                    
     }//GEN-LAST:event_jbEntrarActionPerformed
 
-    private void tfSenha(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfSenha
+    private void tfCPF(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCPF
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfSenha
+    }//GEN-LAST:event_tfCPF
 
     /**
      * @param args the command line arguments
@@ -317,7 +316,7 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton jbEntrar;
     private javax.swing.JButton jbSair;
+    private javax.swing.JTextField tfCPF;
     private javax.swing.JTextField tfLogin;
-    private javax.swing.JTextField tfSenha;
     // End of variables declaration//GEN-END:variables
 }
