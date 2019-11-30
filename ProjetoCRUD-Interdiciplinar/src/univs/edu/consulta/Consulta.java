@@ -24,8 +24,14 @@ public class Consulta {
     @Column (length =100, nullable = false)
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date data;
-   
     
+    private int valor;
+    
+    private String status;
+    
+    private String tipoConsulta;
+   
+    private int horario; 
     
     @OneToOne
     private Cliente cliente;
@@ -91,6 +97,62 @@ public class Consulta {
 
     public void getData(Date date) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     * @return the valor
+     */
+    public int getValor() {
+        return valor;
+    }
+
+    /**
+     * @param valor the valor to set
+     */
+    public void setValor(int valor) {
+        this.valor = valor;
+    }
+
+    /**
+     * @return the status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    /**
+     * @param status the status to set
+     */
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * @return the tipoConsulta
+     */
+    public String getTipoConsulta() {
+        return tipoConsulta;
+    }
+
+    /**
+     * @param tipoConsulta the tipoConsulta to set
+     */
+    public void setTipoConsulta(String tipoConsulta) {
+        this.tipoConsulta = tipoConsulta;
+    }
+
+    /**
+     * @return the horario
+     */
+    public int getHorario() {
+        return horario;
+    }
+
+    /**
+     * @param horario the horario to set
+     */
+    public void setHorario(int horario) {
+        this.horario = horario;
     }
 
   

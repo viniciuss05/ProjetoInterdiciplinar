@@ -19,9 +19,9 @@ public class TelaVincularUsuario extends javax.swing.JFrame {
 
     UsuarioDAO dao = new UsuarioDAO();
     Usuario usuario = new Usuario();
-    TelaFuncionario tela;
+    TelaNivel tela;
   
-    public TelaVincularUsuario(TelaFuncionario tela) {
+    public TelaVincularUsuario(TelaNivel tela) {
         initComponents();
         this.tela = tela;
         tela.setVisible(false);

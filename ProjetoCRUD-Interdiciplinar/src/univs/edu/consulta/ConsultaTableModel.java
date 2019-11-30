@@ -9,7 +9,7 @@ import javax.swing.table.AbstractTableModel;
 public class ConsultaTableModel extends AbstractTableModel {
 
     private List<Consulta> consultas = new ArrayList<>();
-    private String[] colunas = {"Id", "Data", "Dentista", "Cliente",};
+    private String[] colunas = {"Id", "Data","Horario", "Dentista", "Cliente","Consulta","Valor","Status"};
 
     public ConsultaTableModel(List<Consulta> consultas) {
         this.consultas = consultas;
@@ -33,10 +33,24 @@ public class ConsultaTableModel extends AbstractTableModel {
                 return consulta.getIdConsulta();
             case 1:
                 return consulta.getData();
+                
             case 2:
-                return consulta.getDentista().getNome();
+                return consulta.getHorario();
+           
             case 3:
+                return consulta.getDentista().getNome();
+            case 4:
                 return consulta.getCliente().getNome();
+                              
+            case 5:
+                return consulta.getTipoConsulta();
+                
+                case 6:
+                return consulta.getValor();
+            case 7:
+                return consulta.getStatus();
+                
+            
           
         }
         return null;
@@ -52,6 +66,20 @@ public class ConsultaTableModel extends AbstractTableModel {
                 return colunas[2];
             case 3:
                 return colunas[3];
+               
+            case 4:
+                return colunas[4];
+               
+            case 5:
+                return colunas[5];
+                
+            case 6:
+                return colunas[6];
+                
+            case 7:
+                return colunas[7];
+                
+                
             
 
         }

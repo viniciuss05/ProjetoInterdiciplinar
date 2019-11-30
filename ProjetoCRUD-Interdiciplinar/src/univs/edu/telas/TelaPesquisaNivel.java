@@ -14,13 +14,13 @@ import univs.edu.funcionario.FuncionarioTableModel;
  *
  * @author LABORATORIO 01
  */
-public class TelaPesquisaFuncionario extends javax.swing.JFrame {
+public class TelaPesquisaNivel extends javax.swing.JFrame {
 
     FuncionarioDAO dao = new FuncionarioDAO();
     Funcionario funcionario = new Funcionario();
     
   
-    public TelaPesquisaFuncionario() {
+    public TelaPesquisaNivel() {
         initComponents();
         atualizarTabela();
     }
@@ -181,7 +181,7 @@ public class TelaPesquisaFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        TelaFuncionario tela = new TelaFuncionario();
+        TelaNivel tela = new TelaNivel();
         tela.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -192,7 +192,7 @@ public class TelaPesquisaFuncionario extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Selecione uma linha");
         }else{
              funcionario = dao.pesquisar((int)tabelaFuncionario.getValueAt(linha,0));
-             TelaFuncionario tela = new TelaFuncionario();
+             TelaNivel tela = new TelaNivel();
              tela.funcionario = funcionario;
              tela.preencherFuncionario();
              tela.setVisible(true);
@@ -227,21 +227,23 @@ public class TelaPesquisaFuncionario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaPesquisaFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPesquisaNivel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaPesquisaFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPesquisaNivel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaPesquisaFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPesquisaNivel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPesquisaFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPesquisaNivel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaPesquisaFuncionario().setVisible(true);
+                new TelaPesquisaNivel().setVisible(true);
             }
         });
     }

@@ -5,9 +5,12 @@
  */
 package univs.edu.telas;
 
+import java.util.List;
 import javax.swing.JOptionPane;
 import univs.edu.dentista.Dentista;
 import univs.edu.dentista.DentistaDAO;
+import univs.edu.funcionario.Funcionario;
+import univs.edu.funcionario.FuncionarioDAO;
 
 /**
  *
@@ -17,16 +20,30 @@ public class TelaDentista extends javax.swing.JFrame {
 
     Dentista dentista;
     DentistaDAO dao;
-    public TelaDentista() {
+   
+    Funcionario funcionario;
+    FuncionarioDAO funcionariodao = new FuncionarioDAO();
+    
+    public TelaDentista(Funcionario funcionario) {
         initComponents();
         dentista = new Dentista();
+        this.funcionario = funcionario;
         dao = new DentistaDAO();
+        nivelAcesso();
     }
     
       public void preencherDentista(){
         tfNome.setText(dentista.getNome());
         tfCpf.setText(dentista.getCpf());
     }
+      public void nivelAcesso(){
+        if(!funcionario.getCargo().equals("Administrador")){
+           jbSalvar.setVisible(false);
+            
+        }
+    }
+      
+  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -44,7 +61,7 @@ public class TelaDentista extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         tfNome = new javax.swing.JTextField();
         tfCpf = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        jbSalvar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -77,10 +94,10 @@ public class TelaDentista extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Salvar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jbSalvar.setText("Salvar");
+        jbSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jbSalvarActionPerformed(evt);
             }
         });
 
@@ -125,7 +142,7 @@ public class TelaDentista extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                         .addComponent(jButton3)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)
+                        .addComponent(jbSalvar)
                         .addGap(10, 10, 10)
                         .addComponent(jButton2)
                         .addGap(21, 21, 21))
@@ -162,7 +179,7 @@ public class TelaDentista extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton1)
+                        .addComponent(jbSalvar)
                         .addComponent(jButton2))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton3)
@@ -181,7 +198,7 @@ public class TelaDentista extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfCpfActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
         if(!tfNome.getText().isEmpty() || !tfCpf.getText().isEmpty()){
         dentista.setNome(tfNome.getText());
         dentista.setCpf(tfCpf.getText());
@@ -193,10 +210,10 @@ public class TelaDentista extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
         }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jbSalvarActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       TelaPesquisaDentista tela = new TelaPesquisaDentista();
+       TelaPesquisaDentista tela = new TelaPesquisaDentista(funcionario);
        tela.setVisible(true);
        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -246,13 +263,12 @@ public void limparCampos(){
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaDentista().setVisible(true);
+                new TelaDentista(null).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -261,6 +277,7 @@ public void limparCampos(){
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
+    private javax.swing.JButton jbSalvar;
     private javax.swing.JPasswordField tfCpf;
     private javax.swing.JTextField tfNome;
     // End of variables declaration//GEN-END:variables

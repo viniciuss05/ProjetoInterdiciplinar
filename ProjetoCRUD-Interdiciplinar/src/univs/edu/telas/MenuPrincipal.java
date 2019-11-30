@@ -27,6 +27,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
             jmUsuario.setVisible(false);
             
         }
+        if(!funcionario.getCargo().equals("Administrador") && !funcionario.getCargo().equals("Secretario")){
+            jmCadastros.setVisible(false);
+            jbMarcarConsulta.setVisible(false);
+            jbPesquisaCliente.setVisible(false);
+            jbPesquisaDentista.setVisible(false);
+            jbPesquisaFuncionario.setVisible(false);
+            
+            
+        }
     }
 
     /**
@@ -41,11 +50,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jPopupMenu1 = new javax.swing.JPopupMenu();
         jPopupMenu2 = new javax.swing.JPopupMenu();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        jbMarcarConsulta = new javax.swing.JButton();
+        jbPesquisaConsulta = new javax.swing.JButton();
+        jbPesquisaCliente = new javax.swing.JButton();
+        jbPesquisaFuncionario = new javax.swing.JButton();
+        jbPesquisaDentista = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmCadastros = new javax.swing.JMenu();
         jmUsuario = new javax.swing.JMenuItem();
@@ -57,39 +66,40 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(600, 400));
 
-        jButton1.setText("Consulta");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jbMarcarConsulta.setText("Consulta");
+        jbMarcarConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jbMarcarConsultaActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Pesquisa");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jbPesquisaConsulta.setText("Pesquisa");
+        jbPesquisaConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jbPesquisaConsultaActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Pesquisa Cliente");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jbPesquisaCliente.setText("Pesquisa Cliente");
+        jbPesquisaCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jbPesquisaClienteActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Pesquisa Funcionario");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        jbPesquisaFuncionario.setText("Pesquisa Funcionario");
+        jbPesquisaFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                jbPesquisaFuncionarioActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Pesquisa Dentista");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        jbPesquisaDentista.setText("Pesquisa Dentista");
+        jbPesquisaDentista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                jbPesquisaDentistaActionPerformed(evt);
             }
         });
 
@@ -141,26 +151,26 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
+                    .addComponent(jbPesquisaConsulta)
+                    .addComponent(jbMarcarConsulta)
+                    .addComponent(jbPesquisaCliente)
+                    .addComponent(jbPesquisaFuncionario)
+                    .addComponent(jbPesquisaDentista))
                 .addContainerGap(255, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(jButton2)
+                .addComponent(jbPesquisaConsulta)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(jbMarcarConsulta)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3)
+                .addComponent(jbPesquisaCliente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton4)
+                .addComponent(jbPesquisaFuncionario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton5)
+                .addComponent(jbPesquisaDentista)
                 .addContainerGap(125, Short.MAX_VALUE))
         );
 
@@ -173,7 +183,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmUsuarioActionPerformed
 
     private void jmFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmFuncionarioActionPerformed
-        TelaFuncionario tela = new TelaFuncionario();
+        TelaNivel tela = new TelaNivel();
         tela.setVisible(true);
         
     }//GEN-LAST:event_jmFuncionarioActionPerformed
@@ -184,39 +194,43 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        TelaDentista tela = new TelaDentista();
+        
+        TelaDentista tela = new TelaDentista(funcionario);
+        
        tela.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jbMarcarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMarcarConsultaActionPerformed
        TelaConsulta tela = new TelaConsulta();
        tela.setVisible(true);
        dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jbMarcarConsultaActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jbPesquisaConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPesquisaConsultaActionPerformed
        TelaPesquisaConsulta tela = new TelaPesquisaConsulta();
        tela.setVisible(true);
        dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jbPesquisaConsultaActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jbPesquisaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPesquisaClienteActionPerformed
        TelaPesquisaCliente tela = new TelaPesquisaCliente();
        tela.setVisible(true);
        dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jbPesquisaClienteActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       TelaPesquisaFuncionario tela = new TelaPesquisaFuncionario();
+    private void jbPesquisaFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPesquisaFuncionarioActionPerformed
+       TelaPesquisaNivel tela = new TelaPesquisaNivel();
+       nivelAcesso();
        tela.setVisible(true);
-       dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
+       
+       
+    }//GEN-LAST:event_jbPesquisaFuncionarioActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-       TelaPesquisaDentista tela = new TelaPesquisaDentista();
+    private void jbPesquisaDentistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPesquisaDentistaActionPerformed
+       TelaPesquisaDentista tela = new TelaPesquisaDentista(funcionario);
        tela.setVisible(true);
-       dispose();
-    }//GEN-LAST:event_jButton5ActionPerformed
+       
+    }//GEN-LAST:event_jbPesquisaDentistaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -254,11 +268,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
@@ -266,6 +275,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
+    private javax.swing.JButton jbMarcarConsulta;
+    private javax.swing.JButton jbPesquisaCliente;
+    private javax.swing.JButton jbPesquisaConsulta;
+    private javax.swing.JButton jbPesquisaDentista;
+    private javax.swing.JButton jbPesquisaFuncionario;
     private javax.swing.JMenu jmCadastros;
     private javax.swing.JMenuItem jmFuncionario;
     private javax.swing.JMenuItem jmUsuario;

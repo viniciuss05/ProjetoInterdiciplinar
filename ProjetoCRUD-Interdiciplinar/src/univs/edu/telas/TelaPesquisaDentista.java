@@ -11,6 +11,8 @@ import javax.swing.JOptionPane;
 import univs.edu.dentista.Dentista;
 import univs.edu.dentista.DentistaDAO;
 import univs.edu.dentista.DentistaTableModel;
+import univs.edu.funcionario.Funcionario;
+import univs.edu.funcionario.FuncionarioDAO;
 
 /**
  *
@@ -20,11 +22,15 @@ public class TelaPesquisaDentista extends javax.swing.JFrame {
 
     DentistaDAO dao = new DentistaDAO();
     Dentista dentista = new Dentista();
+    Funcionario funcionario;
+    FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
     
-  
-    public TelaPesquisaDentista() {
+    
+    
+    public TelaPesquisaDentista(Funcionario funcionario) {
         initComponents();
         atualizarTabela(dao.ListarDentistas());
+        this.funcionario = funcionario;
     }
 
     public void atualizarTabela(List<Dentista> dentistas){
@@ -190,7 +196,7 @@ public class TelaPesquisaDentista extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Selecione uma linha");
         }else{
              dentista = dao.pesquisar((int)tabelaDentista.getValueAt(linha,0));
-             TelaDentista tela = new TelaDentista();
+             TelaDentista tela = new TelaDentista( funcionario);
              tela.dentista = dentista;
              tela.preencherDentista();
              tela.setVisible(true);
@@ -241,7 +247,7 @@ public class TelaPesquisaDentista extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaPesquisaDentista().setVisible(true);
+                new TelaPesquisaDentista(null).setVisible(true);
             }
         });
     }

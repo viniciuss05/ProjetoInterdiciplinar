@@ -59,14 +59,13 @@ public class TelaCliente extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 255));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Maria Eliene\\Desktop\\81366-200.png")); // NOI18N
         jLabel2.setMaximumSize(new java.awt.Dimension(400, 410));
         jLabel2.setMinimumSize(new java.awt.Dimension(400, 410));
         jLabel2.setPreferredSize(new java.awt.Dimension(500, 510));
 
         jLabel3.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Cadastro de Usuários");
+        jLabel3.setText("Cadastro de Clientes");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
