@@ -20,9 +20,6 @@ public class Funcionario {
     
     @Column (length =50, nullable = false)
     private String cargo;
-   
-    @Column (length =20, nullable = false)
-    private String cpf;
     
     @Column (length =20, nullable = false)
     private double salario;
@@ -72,20 +69,6 @@ public class Funcionario {
      */
     public void setCargo(String cargo) {
         this.cargo = cargo;
-    }
-
-    /**
-     * @return the cpf
-     */
-    public String getCpf() {
-        return cpf;
-    }
-
-    /**
-     * @param cpf the cpf to set
-     */
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
     }
 
     /**
