@@ -8,6 +8,7 @@ package univs.edu.telas;
 import javax.swing.JOptionPane;
 import univs.edu.cliente.Cliente;
 import univs.edu.cliente.ClienteDAO;
+import univs.edu.usuario.Usuario;
 
 
 public class TelaCliente extends javax.swing.JFrame {
@@ -25,7 +26,7 @@ public class TelaCliente extends javax.swing.JFrame {
         tfNome.setText(cliente.getNome());
         tfCpf.setText(cliente.getCpf());
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -104,7 +105,7 @@ public class TelaCliente extends javax.swing.JFrame {
         tfCpf.setForeground(new java.awt.Color(51, 51, 51));
         tfCpf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         jPanel1.add(tfCpf);
-        tfCpf.setBounds(380, 280, 370, 50);
+        tfCpf.setBounds(380, 240, 370, 50);
 
         jLabel1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
@@ -122,7 +123,7 @@ public class TelaCliente extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setText("CPF");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(380, 260, 20, 17);
+        jLabel5.setBounds(380, 220, 20, 17);
 
         jButton1.setText("Voltar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -191,6 +192,7 @@ public class TelaCliente extends javax.swing.JFrame {
         if(!tfNome.getText().isEmpty() || !tfCpf.getText().isEmpty()){
         cliente.setNome(tfNome.getText());
         cliente.setCpf(tfCpf.getText());
+        
         dao.salvar(cliente);
         
         

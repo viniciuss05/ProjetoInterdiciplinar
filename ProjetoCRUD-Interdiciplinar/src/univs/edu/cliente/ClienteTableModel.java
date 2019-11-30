@@ -8,7 +8,7 @@ import javax.swing.table.AbstractTableModel;
 public class ClienteTableModel extends AbstractTableModel {
 
     private List<Cliente> clientes = new ArrayList<>();
-    private String[] colunas = {"Id", "Nome", "Cpf"};
+    private String[] colunas = {"Id", "Nome", "Cpf","Usuario"};
 
     public ClienteTableModel(List<Cliente> clientes) {
         this.clientes = clientes;
@@ -34,6 +34,7 @@ public class ClienteTableModel extends AbstractTableModel {
                 return cliente.getNome();
             case 2:
                 return cliente.getCpf();
+              
         }
         return null;
     }
@@ -46,6 +47,7 @@ public class ClienteTableModel extends AbstractTableModel {
                 return colunas[1];
             case 2:
                 return colunas[2];
+           
 
 
         }

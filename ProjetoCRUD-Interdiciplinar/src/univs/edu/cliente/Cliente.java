@@ -5,6 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Cliente {
@@ -18,6 +19,8 @@ public class Cliente {
     
     @Column(length = 20, nullable = false)
     private String cpf;
+    
+   
 
     public int getIdCliente() {
         return idCliente;
@@ -42,5 +45,11 @@ public class Cliente {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+
+    /**
+     * @return the usuario
+     */
+  
+    }
     
-}
+
