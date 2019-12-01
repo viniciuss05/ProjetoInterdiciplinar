@@ -5,6 +5,7 @@
  */
 package univs.edu.telas;
 
+import java.util.List;
 import javax.swing.JOptionPane;
 import univs.edu.funcionario.Funcionario;
 import univs.edu.funcionario.FuncionarioDAO;
@@ -22,11 +23,11 @@ public class TelaPesquisaNivel extends javax.swing.JFrame {
   
     public TelaPesquisaNivel() {
         initComponents();
-        atualizarTabela();
+        atualizarTabela(dao.ListarFuncionarios());
     }
 
-    public void atualizarTabela(){
-        FuncionarioTableModel tm = new FuncionarioTableModel(dao.ListarFuncionarios());
+   public void atualizarTabela(List<Funcionario> funcionarios){
+        FuncionarioTableModel tm = new FuncionarioTableModel(funcionarios);
         tabelaFuncionario.setModel(tm);
     }
     /**
@@ -175,7 +176,7 @@ public class TelaPesquisaNivel extends javax.swing.JFrame {
         }else if(JOptionPane.showConfirmDialog(null,"Deseja realmente excluir este funcionario?", "Excluir funcionario", JOptionPane.YES_NO_OPTION)== JOptionPane.YES_OPTION){
             funcionario = dao.pesquisar((int)tabelaFuncionario.getValueAt(linha,0));
             dao.excluir(funcionario);
-            atualizarTabela();
+            atualizarTabela(dao.ListarFuncionarios());
             JOptionPane.showMessageDialog(null,"Funcionario excluido");
     }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -207,7 +208,7 @@ public class TelaPesquisaNivel extends javax.swing.JFrame {
     }//GEN-LAST:event_tfLoginKeyPressed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        atualizarTabela(dao.pesquisar("nome", tfLogin.getText()));
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

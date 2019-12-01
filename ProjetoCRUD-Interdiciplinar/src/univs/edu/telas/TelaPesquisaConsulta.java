@@ -5,10 +5,12 @@
  */
 package univs.edu.telas;
 
+import java.util.List;
 import javax.swing.JOptionPane;
 import univs.edu.consulta.Consulta;
 import univs.edu.consulta.ConsultaDAO;
 import univs.edu.consulta.ConsultaTableModel;
+import static univs.edu.consulta.Consulta_.cliente;
 
 /**
  *
@@ -22,11 +24,11 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
   
     public TelaPesquisaConsulta() {
         initComponents();
-        atualizarTabela();
+        atualizarTabela(dao.ListarConsultas());
     }
 
-    public void atualizarTabela(){
-        ConsultaTableModel tm = new ConsultaTableModel(dao.ListarConsultas());
+    public void atualizarTabela(List<Consulta> consultas){
+        ConsultaTableModel tm = new ConsultaTableModel(consultas);
         tabelaConsulta.setModel(tm);
     }
     /**
@@ -39,7 +41,7 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        tfLogin = new javax.swing.JTextField();
+        tfNome = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -53,19 +55,19 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Consultas");
 
-        tfLogin.addActionListener(new java.awt.event.ActionListener() {
+        tfNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfLoginActionPerformed(evt);
+                tfNomeActionPerformed(evt);
             }
         });
-        tfLogin.addKeyListener(new java.awt.event.KeyAdapter() {
+        tfNome.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                tfLoginKeyPressed(evt);
+                tfNomeKeyPressed(evt);
             }
         });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setText("Login");
+        jLabel3.setText("Cliente");
 
         jButton2.setText("Pesquisar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -113,10 +115,10 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addGap(23, 23, 23)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tfLogin)
+                .addGap(18, 18, 18)
+                .addComponent(tfNome)
                 .addGap(22, 22, 22)
                 .addComponent(jButton2)
                 .addGap(22, 22, 22))
@@ -144,11 +146,10 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(tfLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton2)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2)
+                    .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
@@ -162,9 +163,9 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tfLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfLoginActionPerformed
+    private void tfNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNomeActionPerformed
 
-    }//GEN-LAST:event_tfLoginActionPerformed
+    }//GEN-LAST:event_tfNomeActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         int linha = tabelaConsulta.getSelectedRow();
@@ -173,14 +174,13 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
         }else if(JOptionPane.showConfirmDialog(null,"Deseja realmente excluir este consulta?", "Excluir consulta", JOptionPane.YES_NO_OPTION)== JOptionPane.YES_OPTION){
             consulta = dao.pesquisar((int)tabelaConsulta.getValueAt(linha,0));
             dao.excluir(consulta);
-            atualizarTabela();
+            atualizarTabela(dao.ListarConsultas());
             JOptionPane.showMessageDialog(null,"Consulta excluido");
     }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        TelaConsulta tela = new TelaConsulta();
-        tela.setVisible(true);
+       
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -200,12 +200,12 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void tfLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfLoginKeyPressed
-        
-    }//GEN-LAST:event_tfLoginKeyPressed
+    private void tfNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfNomeKeyPressed
+      atualizarTabela(dao.pesquisar("cliente", tfNome.getText()));   
+    }//GEN-LAST:event_tfNomeKeyPressed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+    atualizarTabela(dao.pesquisar("Cliente", tfNome.getText()));        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -253,6 +253,6 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabelaConsulta;
-    private javax.swing.JTextField tfLogin;
+    private javax.swing.JTextField tfNome;
     // End of variables declaration//GEN-END:variables
 }

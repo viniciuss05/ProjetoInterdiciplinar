@@ -277,6 +277,7 @@ public class TelaConsulta extends javax.swing.JFrame {
            
             
             ConsultaDAO.salvar(consulta);
+            dispose();
             //!tfSalario.getText().isEmpty()
            
 

@@ -201,11 +201,11 @@ public class TelaPesquisaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       atualizarTabela(dao.pesquisar("login", tfLogin.getText()));
+       atualizarTabela(dao.pesquisar("cpf", tfLogin.getText()));
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void tfLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfLoginKeyPressed
-        atualizarTabela(dao.pesquisar("login", tfLogin.getText()));
+        atualizarTabela(dao.pesquisar("cpf", tfLogin.getText()));
     }//GEN-LAST:event_tfLoginKeyPressed
 
     /**

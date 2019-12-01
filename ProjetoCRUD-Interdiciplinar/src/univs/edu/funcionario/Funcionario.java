@@ -24,6 +24,9 @@ public class Funcionario {
     @Column (length =20, nullable = false)
     private double salario;
     
+    @Column (length =20, nullable = false)
+    private int numero;
+    
     
     @OneToOne
     private Usuario usuario;
@@ -97,6 +100,20 @@ public class Funcionario {
      */
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    /**
+     * @return the numero
+     */
+    public int getNumero() {
+        return numero;
+    }
+
+    /**
+     * @param numero the numero to set
+     */
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
     
 

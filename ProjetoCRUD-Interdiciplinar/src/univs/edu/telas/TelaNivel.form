@@ -85,7 +85,7 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="tfUsuario" min="-2" pref="255" max="-2" attributes="0"/>
-                                  <Component id="tfCPF" alignment="0" min="-2" pref="255" max="-2" attributes="0"/>
+                                  <Component id="tfTelefone" alignment="0" min="-2" pref="255" max="-2" attributes="0"/>
                                   <Component id="tfNome" alignment="0" min="-2" pref="255" max="-2" attributes="0"/>
                                   <Component id="jcCargo" alignment="0" min="-2" pref="255" max="-2" attributes="0"/>
                               </Group>
@@ -128,7 +128,7 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="tfCPF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -272,9 +272,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfCPF">
+    <Component class="javax.swing.JTextField" name="tfTelefone">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfCPFActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfTelefoneActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

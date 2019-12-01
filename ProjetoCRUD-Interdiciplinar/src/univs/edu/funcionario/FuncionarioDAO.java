@@ -68,6 +68,15 @@ public class FuncionarioDAO {
         sessao.close();
         return funcionarios;
     }
+     public List<Funcionario> pesquisar (String campo, String valor){
+        
+        sessao = HibernateUtil.getSessionFactory().openSession();
+        transacao = sessao.beginTransaction();
+        List<Funcionario> funcionarios = sessao.createCriteria(Funcionario.class).add(Restrictions.ilike(campo, "%"+valor+"%")).list();
+        sessao.close();
+        
+        return funcionarios;
+        }
 
     /**
      *

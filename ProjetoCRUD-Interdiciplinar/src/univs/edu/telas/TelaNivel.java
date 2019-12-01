@@ -27,7 +27,7 @@ public class TelaNivel extends javax.swing.JFrame {
         funcionario = new Funcionario();
         tfNome.setText("");
         tfUsuario.setText("");
-        tfCPF.setText("");
+        tfTelefone.setText("");
         jcCargo.setSelectedItem("Selecione");
     }
     public void preencherFuncionario(){
@@ -63,7 +63,7 @@ public class TelaNivel extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        tfCPF = new javax.swing.JTextField();
+        tfTelefone = new javax.swing.JTextField();
 
         tfLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,9 +158,9 @@ public class TelaNivel extends javax.swing.JFrame {
             }
         });
 
-        tfCPF.addActionListener(new java.awt.event.ActionListener() {
+        tfTelefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfCPFActionPerformed(evt);
+                tfTelefoneActionPerformed(evt);
             }
         });
 
@@ -192,7 +192,7 @@ public class TelaNivel extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(tfUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tfCPF, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tfTelefone, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(tfNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jcCargo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -224,7 +224,7 @@ public class TelaNivel extends javax.swing.JFrame {
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -282,12 +282,13 @@ public class TelaNivel extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        if(!tfNome.getText().isEmpty() && !tfCPF.getText().isEmpty()
+        if(!tfNome.getText().isEmpty() && !tfTelefone.getText().isEmpty()
                 && !tfUsuario.getText().isEmpty() 
                 && !jcCargo.getSelectedItem().equals("Selecione"))
         {
         funcionario.setCargo(String.valueOf(jcCargo.getSelectedItem()));
         funcionario.setNome(tfNome.getText());
+        funcionario.setNumero((Integer.parseInt(tfTelefone.getText())));
         dao.salvar(funcionario);
         limparCampos();
         dispose();
@@ -301,9 +302,9 @@ public class TelaNivel extends javax.swing.JFrame {
        limparCampos();
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void tfCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCPFActionPerformed
+    private void tfTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTelefoneActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfCPFActionPerformed
+    }//GEN-LAST:event_tfTelefoneActionPerformed
 
     /**
      * @param args the command line arguments
@@ -356,10 +357,10 @@ public class TelaNivel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JComboBox<String> jcCargo;
-    private javax.swing.JTextField tfCPF;
     private javax.swing.JTextField tfLogin;
     private javax.swing.JTextField tfNome;
     private javax.swing.JPasswordField tfSenha;
+    private javax.swing.JTextField tfTelefone;
     private javax.swing.JTextField tfUsuario;
     // End of variables declaration//GEN-END:variables
 }

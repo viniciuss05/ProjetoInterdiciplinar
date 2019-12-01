@@ -3,10 +3,12 @@ package univs.edu.consulta;
 import univs.edu.consulta.*;
 import univs.edu.consulta.*;
 import java.util.List;
+import javax.persistence.metamodel.SingularAttribute;
 import javax.swing.JOptionPane;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
+import univs.edu.cliente.Cliente;
 import univs.edu.consulta.Consulta;
 import univs.edu.util.HibernateUtil;
 
@@ -61,6 +63,15 @@ public class ConsultaDAO {
 
         return consulta != null ? consulta : null;
     }
+    public List<Consulta> pesquisar (String campo, String valor){
+        
+        sessao = HibernateUtil.getSessionFactory().openSession();
+        transacao = sessao.beginTransaction();
+        List<Consulta> consultas = sessao.createCriteria(Consulta.class).add(Restrictions.ilike(campo, "%"+valor+"%")).list();
+        sessao.close();
+        
+        return consultas;
+        }
 
     public List<Consulta> ListarConsultas() {
         sessao = HibernateUtil.getSessionFactory().openSession();
@@ -69,6 +80,8 @@ public class ConsultaDAO {
         sessao.close();
         return consultas;
     }
+
+    
 
  
 }
