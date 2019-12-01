@@ -31,7 +31,7 @@ public class JPassWordFieldHint extends JPasswordField implements FocusListener 
     private String hint;
     private Insets dummyInsets;
 
-    public JPassWordFieldHint(JTextField jtf, String icon, String hint) {
+    public JPassWordFieldHint(JTextField jtf,String hint) {
         this.jtf = jtf;
         ImageIcon img1 = new ImageIcon("icons/" + icon + ".png");
         setIcon(img1);

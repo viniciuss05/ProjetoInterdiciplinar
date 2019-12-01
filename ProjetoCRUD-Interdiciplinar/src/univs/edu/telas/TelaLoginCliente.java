@@ -44,7 +44,7 @@ public class TelaLoginCliente extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jbEntrar = new javax.swing.JButton();
         jbSair = new javax.swing.JButton();
-        tfCPF = new univs.edu.outros.JTextFieldHint(new JTextField(),"padlock",  "CPF");
+        tfCPF = new univs.edu.outros.JTextFieldHint(new JTextField(),"CPF");
         ;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);

@@ -33,6 +33,10 @@ public class TelaPesquisaDentista extends javax.swing.JFrame {
         this.funcionario = funcionario;
     }
 
+    TelaPesquisaDentista() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public void atualizarTabela(List<Dentista> dentistas){
         DentistaTableModel tm = new DentistaTableModel(dentistas);
         tabelaDentista.setModel(tm);

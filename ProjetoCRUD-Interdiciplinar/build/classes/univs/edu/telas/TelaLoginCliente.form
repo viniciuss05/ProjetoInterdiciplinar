@@ -203,7 +203,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfCPF"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new univs.edu.outros.JTextFieldHint(new JTextField(),&quot;padlock&quot;,  &quot;CPF&quot;);&#xd;&#xa;"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new univs.edu.outros.JTextFieldHint(new JTextField(),&quot;CPF&quot;);&#xd;&#xa;"/>
           </AuxValues>
         </Component>
       </SubComponents>

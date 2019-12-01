@@ -203,7 +203,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfLogin"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new univs.edu.outros.JTextFieldHint(new JTextField(),&quot;user-icon&quot;, &quot;Nome&quot;);&#xd;&#xa;"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new univs.edu.outros.JTextFieldHint(new JTextField(), &quot;Nome&quot;);&#xd;&#xa;"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="tfCPF">
@@ -219,7 +219,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfCPF"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new univs.edu.outros.JTextFieldHint(new JTextField(),&quot;padlock&quot;,  &quot;CPF&quot;);&#xd;&#xa;"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new univs.edu.outros.JPassWordFieldHint(new JPasswordField(),&quot;Senha&quot;);&#xd; "/>
           </AuxValues>
         </Component>
       </SubComponents>

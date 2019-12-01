@@ -9,9 +9,12 @@ import java.awt.Color;
 import java.awt.Point;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import univs.edu.funcionario.Funcionario;
 import univs.edu.funcionario.FuncionarioDAO;
+import univs.edu.telas.MenuPrincipal;
+
 
 /**
  *
@@ -44,10 +47,10 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jbEntrar = new javax.swing.JButton();
         jbSair = new javax.swing.JButton();
-        tfLogin = new univs.edu.outros.JTextFieldHint(new JTextField(),"user-icon", "Nome");
+        tfLogin = new univs.edu.outros.JTextFieldHint(new JTextField(), "Nome");
         ;
-        tfCPF = new univs.edu.outros.JTextFieldHint(new JTextField(),"padlock",  "CPF");
-        ;
+        tfCPF = new univs.edu.outros.JPassWordFieldHint(new JPasswordField(),"Senha");
+ ;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(400, 410));
