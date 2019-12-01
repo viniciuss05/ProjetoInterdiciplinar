@@ -126,6 +126,11 @@ public class TelaDentista extends javax.swing.JFrame {
                 tfNomeFocusGained(evt);
             }
         });
+        tfNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfNomeActionPerformed(evt);
+            }
+        });
 
         jSeparator1.setBackground(new java.awt.Color(153, 153, 153));
         jSeparator1.setForeground(new java.awt.Color(153, 153, 153));
@@ -273,6 +278,10 @@ public class TelaDentista extends javax.swing.JFrame {
     private void tfCpfFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfCpfFocusGained
         tfCpf.setText("");
     }//GEN-LAST:event_tfCpfFocusGained
+
+    private void tfNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfNomeActionPerformed
 
     public void limparCampos(){
     dentista = new Dentista();

@@ -183,7 +183,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmUsuarioActionPerformed
 
     private void jmFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmFuncionarioActionPerformed
-        TelaNivel tela = new TelaNivel();
+        TelaNivelDeAcesso tela = new TelaNivelDeAcesso();
         tela.setVisible(true);
         
     }//GEN-LAST:event_jmFuncionarioActionPerformed

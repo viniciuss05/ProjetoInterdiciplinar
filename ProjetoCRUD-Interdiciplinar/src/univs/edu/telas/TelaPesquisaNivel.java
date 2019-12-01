@@ -182,7 +182,7 @@ public class TelaPesquisaNivel extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        TelaNivel tela = new TelaNivel();
+        TelaNivelDeAcesso tela = new TelaNivelDeAcesso();
         tela.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -193,7 +193,7 @@ public class TelaPesquisaNivel extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Selecione uma linha");
         }else{
              funcionario = dao.pesquisar((int)tabelaFuncionario.getValueAt(linha,0));
-             TelaNivel tela = new TelaNivel();
+             TelaNivelDeAcesso tela = new TelaNivelDeAcesso();
              tela.funcionario = funcionario;
              tela.preencherFuncionario();
              tela.setVisible(true);
