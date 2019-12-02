@@ -45,7 +45,7 @@ public class ConsultaTableModel extends AbstractTableModel {
             case 5:
                 return consulta.getTipoConsulta();
                 
-                case 6:
+            case 6:
                 return consulta.getValor();
             case 7:
                 return consulta.getStatus();
@@ -78,9 +78,7 @@ public class ConsultaTableModel extends AbstractTableModel {
                 
             case 7:
                 return colunas[7];
-                
-                
-            
+                            
 
         }
         return null;

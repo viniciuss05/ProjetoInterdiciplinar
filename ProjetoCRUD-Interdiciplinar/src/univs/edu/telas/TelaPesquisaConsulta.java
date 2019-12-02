@@ -26,11 +26,12 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
         initComponents();
         atualizarTabela(dao.ListarConsultas());
     }
-
     public void atualizarTabela(List<Consulta> consultas){
         ConsultaTableModel tm = new ConsultaTableModel(consultas);
         tabelaConsulta.setModel(tm);
     }
+   
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -41,7 +42,7 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        tfNome = new javax.swing.JTextField();
+        tfLogin = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -55,14 +56,14 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Consultas");
 
-        tfNome.addActionListener(new java.awt.event.ActionListener() {
+        tfLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfNomeActionPerformed(evt);
+                tfLoginActionPerformed(evt);
             }
         });
-        tfNome.addKeyListener(new java.awt.event.KeyAdapter() {
+        tfLogin.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                tfNomeKeyPressed(evt);
+                tfLoginKeyPressed(evt);
             }
         });
 
@@ -118,7 +119,7 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
-                .addComponent(tfNome)
+                .addComponent(tfLogin)
                 .addGap(22, 22, 22)
                 .addComponent(jButton2)
                 .addGap(22, 22, 22))
@@ -147,7 +148,7 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
@@ -163,9 +164,9 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tfNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNomeActionPerformed
+    private void tfLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfLoginActionPerformed
 
-    }//GEN-LAST:event_tfNomeActionPerformed
+    }//GEN-LAST:event_tfLoginActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         int linha = tabelaConsulta.getSelectedRow();
@@ -200,12 +201,12 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void tfNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfNomeKeyPressed
-      atualizarTabela(dao.pesquisar("cliente", tfNome.getText()));   
-    }//GEN-LAST:event_tfNomeKeyPressed
+    private void tfLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfLoginKeyPressed
+       
+    }//GEN-LAST:event_tfLoginKeyPressed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    atualizarTabela(dao.pesquisar("Cliente", tfNome.getText()));        
+        atualizarTabela(dao.pesquisar("status", tfLogin.getText()));
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -253,6 +254,6 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabelaConsulta;
-    private javax.swing.JTextField tfNome;
+    private javax.swing.JTextField tfLogin;
     // End of variables declaration//GEN-END:variables
 }

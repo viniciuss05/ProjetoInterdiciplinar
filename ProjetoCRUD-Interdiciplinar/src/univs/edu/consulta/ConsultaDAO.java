@@ -63,6 +63,15 @@ public class ConsultaDAO {
 
         return consulta != null ? consulta : null;
     }
+     
+
+    public List<Consulta> ListarConsultas() {
+        sessao = HibernateUtil.getSessionFactory().openSession();
+        transacao = sessao.beginTransaction();
+        List<Consulta> consultas = sessao.createCriteria(Consulta.class).list();
+        sessao.close();
+        return consultas;
+    }
     public List<Consulta> pesquisar (String campo, String valor){
         
         sessao = HibernateUtil.getSessionFactory().openSession();
@@ -72,14 +81,6 @@ public class ConsultaDAO {
         
         return consultas;
         }
-
-    public List<Consulta> ListarConsultas() {
-        sessao = HibernateUtil.getSessionFactory().openSession();
-        transacao = sessao.beginTransaction();
-        List<Consulta> consultas = sessao.createCriteria(Consulta.class).list();
-        sessao.close();
-        return consultas;
-    }
 
     
 

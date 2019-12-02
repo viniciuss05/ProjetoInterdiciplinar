@@ -5,8 +5,14 @@
  */
 package univs.edu.telas;
 
+import java.awt.HeadlessException;
 import java.util.List;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 
 import univs.edu.cliente.Cliente;
 import univs.edu.cliente.ClienteDAO;
@@ -167,7 +173,9 @@ public class TelaPesquisaCliente extends javax.swing.JFrame {
     private void tfLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfLoginActionPerformed
         
     }//GEN-LAST:event_tfLoginActionPerformed
-
+    public void obrigar (){
+        tfLogin.setText("Maria");
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         int linha = tabelaCliente.getSelectedRow();
         if(linha == -1){
@@ -200,8 +208,21 @@ public class TelaPesquisaCliente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    public TelaPesquisaCliente(JButton jButton1, JButton jButton2, JButton jButton3, JButton jButton4, JLabel jLabel2, JLabel jLabel3, JScrollPane jScrollPane1, JTable tabelaCliente, JTextField tfLogin) throws HeadlessException {
+        this.jButton1 = jButton1;
+        this.jButton2 = jButton2;
+        this.jButton3 = jButton3;
+        this.jButton4 = jButton4;
+        this.jLabel2 = jLabel2;
+        this.jLabel3 = jLabel3;
+        this.jScrollPane1 = jScrollPane1;
+        this.tabelaCliente = tabelaCliente;
+        this.tfLogin = tfLogin;
+    }
+
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       atualizarTabela(dao.pesquisar("cpf", tfLogin.getText()));
+        
+        atualizarTabela(dao.pesquisar("cpf", tfLogin.getText ()));
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void tfLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfLoginKeyPressed

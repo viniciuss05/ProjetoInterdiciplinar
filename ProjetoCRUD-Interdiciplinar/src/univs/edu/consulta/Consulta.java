@@ -33,6 +33,7 @@ public class Consulta {
    
     private int horario; 
     
+    
     @OneToOne
     private Cliente cliente;
     
