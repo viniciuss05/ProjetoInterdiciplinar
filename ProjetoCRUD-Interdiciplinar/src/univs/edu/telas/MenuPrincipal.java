@@ -50,8 +50,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jPopupMenu1 = new javax.swing.JPopupMenu();
         jPopupMenu2 = new javax.swing.JPopupMenu();
-        jbMarcarConsulta = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jbPesquisaConsulta = new javax.swing.JButton();
+        jbMarcarConsulta = new javax.swing.JButton();
         jbPesquisaCliente = new javax.swing.JButton();
         jbPesquisaFuncionario = new javax.swing.JButton();
         jbPesquisaDentista = new javax.swing.JButton();
@@ -66,15 +68,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(600, 400));
+        setResizable(false);
 
-        jbMarcarConsulta.setText("Consulta");
-        jbMarcarConsulta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbMarcarConsultaActionPerformed(evt);
-            }
-        });
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/univs/edu/imagens/menu principal.png"))); // NOI18N
 
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setToolTipText("");
+
+        jbPesquisaConsulta.setBackground(new java.awt.Color(0, 0, 0));
+        jbPesquisaConsulta.setFont(new java.awt.Font("Beyond The Mountains", 0, 18)); // NOI18N
+        jbPesquisaConsulta.setForeground(new java.awt.Color(255, 255, 255));
+        jbPesquisaConsulta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/univs/edu/imagens/dente.png"))); // NOI18N
         jbPesquisaConsulta.setText("Pesquisa");
         jbPesquisaConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +87,21 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jbMarcarConsulta.setBackground(new java.awt.Color(0, 0, 0));
+        jbMarcarConsulta.setFont(new java.awt.Font("Beyond The Mountains", 0, 18)); // NOI18N
+        jbMarcarConsulta.setForeground(new java.awt.Color(255, 255, 255));
+        jbMarcarConsulta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/univs/edu/imagens/dente.png"))); // NOI18N
+        jbMarcarConsulta.setText("Consulta");
+        jbMarcarConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMarcarConsultaActionPerformed(evt);
+            }
+        });
+
+        jbPesquisaCliente.setBackground(new java.awt.Color(0, 0, 0));
+        jbPesquisaCliente.setFont(new java.awt.Font("Beyond The Mountains", 0, 18)); // NOI18N
+        jbPesquisaCliente.setForeground(new java.awt.Color(255, 255, 255));
+        jbPesquisaCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/univs/edu/imagens/dente.png"))); // NOI18N
         jbPesquisaCliente.setText("Pesquisa Cliente");
         jbPesquisaCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,6 +109,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jbPesquisaFuncionario.setBackground(new java.awt.Color(0, 0, 0));
+        jbPesquisaFuncionario.setFont(new java.awt.Font("Beyond The Mountains", 0, 18)); // NOI18N
+        jbPesquisaFuncionario.setForeground(new java.awt.Color(255, 255, 255));
+        jbPesquisaFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/univs/edu/imagens/dente.png"))); // NOI18N
         jbPesquisaFuncionario.setText("Pesquisa Funcionario");
         jbPesquisaFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,12 +120,54 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jbPesquisaDentista.setBackground(new java.awt.Color(0, 0, 0));
+        jbPesquisaDentista.setFont(new java.awt.Font("Beyond The Mountains", 0, 18)); // NOI18N
+        jbPesquisaDentista.setForeground(new java.awt.Color(255, 255, 255));
+        jbPesquisaDentista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/univs/edu/imagens/dente.png"))); // NOI18N
         jbPesquisaDentista.setText("Pesquisa Dentista");
         jbPesquisaDentista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbPesquisaDentistaActionPerformed(evt);
             }
         });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(76, 76, 76)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jbPesquisaConsulta)
+                    .addComponent(jbPesquisaFuncionario))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jbPesquisaCliente)
+                    .addComponent(jbPesquisaDentista))
+                .addGap(69, 69, 69))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(380, 380, 380)
+                .addComponent(jbMarcarConsulta)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbPesquisaConsulta)
+                    .addComponent(jbPesquisaCliente))
+                .addGap(18, 18, 18)
+                .addComponent(jbMarcarConsulta)
+                .addGap(51, 51, 51)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbPesquisaFuncionario)
+                    .addComponent(jbPesquisaDentista))
+                .addContainerGap(80, Short.MAX_VALUE))
+        );
+
+        jMenuBar1.setBackground(new java.awt.Color(31, 31, 31));
+        jMenuBar1.setForeground(new java.awt.Color(255, 255, 255));
 
         jmCadastros.setText("Cadastros");
 
@@ -149,87 +215,74 @@ public class MenuPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbPesquisaConsulta)
-                    .addComponent(jbMarcarConsulta)
-                    .addComponent(jbPesquisaCliente)
-                    .addComponent(jbPesquisaFuncionario)
-                    .addComponent(jbPesquisaDentista))
-                .addContainerGap(255, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jbPesquisaConsulta)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jbMarcarConsulta)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jbPesquisaCliente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jbPesquisaFuncionario)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jbPesquisaDentista)
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jmUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmUsuarioActionPerformed
-       TelaUsuario tela = new TelaUsuario();
-       tela.setVisible(true);
-    }//GEN-LAST:event_jmUsuarioActionPerformed
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+
+        TelaDentista tela = new TelaDentista(funcionario);
+
+        tela.setVisible(true);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        TelaCliente tela = new TelaCliente();
+        tela.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jmFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmFuncionarioActionPerformed
         TelaNivelDeAcesso tela = new TelaNivelDeAcesso();
         tela.setVisible(true);
-        
+
     }//GEN-LAST:event_jmFuncionarioActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        TelaCliente tela = new TelaCliente();
-       tela.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        
-        TelaDentista tela = new TelaDentista(funcionario);
-        
-       tela.setVisible(true);
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
-
-    private void jbMarcarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMarcarConsultaActionPerformed
-       TelaConsulta tela = new TelaConsulta();
-       tela.setVisible(true);
-       dispose();
-    }//GEN-LAST:event_jbMarcarConsultaActionPerformed
+    private void jmUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmUsuarioActionPerformed
+        TelaUsuario tela = new TelaUsuario();
+        tela.setVisible(true);
+    }//GEN-LAST:event_jmUsuarioActionPerformed
 
     private void jbPesquisaConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPesquisaConsultaActionPerformed
-       TelaPesquisaConsulta tela = new TelaPesquisaConsulta();
-       tela.setVisible(true);
-       dispose();
+        TelaPesquisaConsulta tela = new TelaPesquisaConsulta();
+        tela.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jbPesquisaConsultaActionPerformed
 
+    private void jbMarcarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMarcarConsultaActionPerformed
+        TelaConsulta tela = new TelaConsulta();
+        tela.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jbMarcarConsultaActionPerformed
+
     private void jbPesquisaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPesquisaClienteActionPerformed
-       TelaPesquisaCliente tela = new TelaPesquisaCliente();
-       tela.setVisible(true);
-       dispose();
+        TelaPesquisaCliente tela = new TelaPesquisaCliente();
+        tela.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jbPesquisaClienteActionPerformed
 
     private void jbPesquisaFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPesquisaFuncionarioActionPerformed
-       TelaPesquisaNivel tela = new TelaPesquisaNivel();
-       nivelAcesso();
-       tela.setVisible(true);
-       
-       
+        TelaPesquisaNivel tela = new TelaPesquisaNivel();
+        nivelAcesso();
+        tela.setVisible(true);
+
     }//GEN-LAST:event_jbPesquisaFuncionarioActionPerformed
 
     private void jbPesquisaDentistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPesquisaDentistaActionPerformed
-       TelaPesquisaDentista tela = new TelaPesquisaDentista(funcionario);
-       tela.setVisible(true);
-       
+        TelaPesquisaDentista tela = new TelaPesquisaDentista(funcionario);
+        tela.setVisible(true);
+
     }//GEN-LAST:event_jbPesquisaDentistaActionPerformed
 
     /**
@@ -268,11 +321,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JButton jbMarcarConsulta;

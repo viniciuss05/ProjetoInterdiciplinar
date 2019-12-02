@@ -1,5 +1,8 @@
 package univs.edu.consulta;
 
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
+import java.util.Date;
 import univs.edu.consulta.*;
 import univs.edu.consulta.*;
 import java.util.List;
@@ -81,6 +84,8 @@ public class ConsultaDAO {
         
         return consultas;
         }
+   
+
 
     
 

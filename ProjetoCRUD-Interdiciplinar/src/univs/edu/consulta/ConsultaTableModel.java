@@ -5,6 +5,7 @@ import univs.edu.consulta.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
+import univs.edu.dentista.Dentista;
 
 public class ConsultaTableModel extends AbstractTableModel {
 
@@ -16,7 +17,7 @@ public class ConsultaTableModel extends AbstractTableModel {
     }
 
     @Override
-    public int getRowCount() {
+    public int getRowCount() { 
         return consultas.size();
     }
 
@@ -39,6 +40,7 @@ public class ConsultaTableModel extends AbstractTableModel {
            
             case 3:
                 return consulta.getDentista().getNome();
+                
             case 4:
                 return consulta.getCliente().getNome();
                               
@@ -47,8 +49,11 @@ public class ConsultaTableModel extends AbstractTableModel {
                 
             case 6:
                 return consulta.getValor();
+                
             case 7:
                 return consulta.getStatus();
+            
+                
                 
             
           

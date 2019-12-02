@@ -25,19 +25,24 @@ public class Consulta {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date data;
     
+    @Column (length =100, nullable = false)
     private int valor;
-    
+    @Column (length =100, nullable = false)
     private String status;
-    
+    @Column (length =100, nullable = false)
     private String tipoConsulta;
-   
+   @Column (length =100, nullable = false)
     private int horario; 
+    
+
     
     
     @OneToOne
+   
     private Cliente cliente;
     
     @OneToOne
+    
     private Dentista dentista;
 
     /**
@@ -155,6 +160,8 @@ public class Consulta {
     public void setHorario(int horario) {
         this.horario = horario;
     }
+
+  
 
   
  

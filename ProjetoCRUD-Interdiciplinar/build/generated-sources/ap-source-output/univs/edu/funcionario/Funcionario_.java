@@ -9,6 +9,7 @@ import univs.edu.usuario.Usuario;
 @StaticMetamodel(Funcionario.class)
 public abstract class Funcionario_ {
 
+	public static volatile SingularAttribute<Funcionario, Integer> numero;
 	public static volatile SingularAttribute<Funcionario, Double> salario;
 	public static volatile SingularAttribute<Funcionario, String> nome;
 	public static volatile SingularAttribute<Funcionario, Usuario> usuario;
