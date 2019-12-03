@@ -93,7 +93,8 @@ public class TelaPesquisaCliente extends javax.swing.JFrame {
         });
 
         tabelaCliente.setBackground(new java.awt.Color(31, 31, 31));
-        tabelaCliente.setFont(new java.awt.Font("Beyond The Mountains", 0, 11)); // NOI18N
+        tabelaCliente.setFont(new java.awt.Font("Calibri Light", 0, 12)); // NOI18N
+        tabelaCliente.setForeground(new java.awt.Color(255, 255, 255));
         tabelaCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},

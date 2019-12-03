@@ -63,12 +63,12 @@ public class TelaPesquisaDentista extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1000, 600));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(31, 31, 31));
 
         tabelaDentista.setBackground(new java.awt.Color(31, 31, 31));
+        tabelaDentista.setFont(new java.awt.Font("Calibri Light", 0, 12)); // NOI18N
         tabelaDentista.setForeground(new java.awt.Color(255, 255, 255));
         tabelaDentista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

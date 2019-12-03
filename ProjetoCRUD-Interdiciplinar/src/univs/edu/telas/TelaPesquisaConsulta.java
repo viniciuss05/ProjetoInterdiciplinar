@@ -88,7 +88,7 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
         });
 
         tabelaConsulta.setBackground(new java.awt.Color(31, 31, 31));
-        tabelaConsulta.setFont(new java.awt.Font("Beyond The Mountains", 0, 18)); // NOI18N
+        tabelaConsulta.setFont(new java.awt.Font("Calibri Light", 0, 12)); // NOI18N
         tabelaConsulta.setForeground(new java.awt.Color(255, 255, 255));
         tabelaConsulta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

@@ -51,7 +51,6 @@ public class TelaNivelDeAcesso extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         tfNome = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
-        tfTelefone = new javax.swing.JFormattedTextField();
         jLabel22 = new javax.swing.JLabel();
         jcCargo = new javax.swing.JComboBox<>();
         jLabel23 = new javax.swing.JLabel();
@@ -61,6 +60,8 @@ public class TelaNivelDeAcesso extends javax.swing.JFrame {
         jButton23 = new javax.swing.JButton();
         jButton25 = new javax.swing.JButton();
         jButton24 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tfTelefone = new javax.swing.JTextPane();
         jLabel1 = new javax.swing.JLabel();
 
         jLabel18.setFont(new java.awt.Font("High Tower Text", 0, 18)); // NOI18N
@@ -97,13 +98,6 @@ public class TelaNivelDeAcesso extends javax.swing.JFrame {
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel21.setText("Telefone:");
-
-        tfTelefone.setBorder(null);
-        try {
-            tfTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) ####-####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
 
         jLabel22.setFont(new java.awt.Font("Beyond The Mountains", 0, 36)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
@@ -177,6 +171,8 @@ public class TelaNivelDeAcesso extends javax.swing.JFrame {
             }
         });
 
+        jScrollPane1.setViewportView(tfTelefone);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -187,8 +183,8 @@ public class TelaNivelDeAcesso extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
                     .addComponent(tfNome)
-                    .addComponent(tfTelefone)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -221,7 +217,7 @@ public class TelaNivelDeAcesso extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel21)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel22)
@@ -360,9 +356,10 @@ public class TelaNivelDeAcesso extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> jcCargo;
     private javax.swing.JTextField tfNome;
-    private javax.swing.JFormattedTextField tfTelefone;
+    private javax.swing.JTextPane tfTelefone;
     private javax.swing.JTextField tfUsuario;
     // End of variables declaration//GEN-END:variables
 }

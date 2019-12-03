@@ -27,15 +27,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             jmUsuario.setVisible(false);
             
         }
-        if(!funcionario.getCargo().equals("Administrador") && !funcionario.getCargo().equals("Secretario")){
-            jmCadastros.setVisible(false);
-            jbMarcarConsulta.setVisible(false);
-            jbPesquisaCliente.setVisible(false);
-            jbPesquisaDentista.setVisible(false);
-            jbPesquisaFuncionario.setVisible(false);
-            
-            
-        }
+       
     }
 
     /**

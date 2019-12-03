@@ -101,7 +101,7 @@ public class TelaPesquisaNivel extends javax.swing.JFrame {
         });
 
         tabelaFuncionario.setBackground(new java.awt.Color(31, 31, 31));
-        tabelaFuncionario.setFont(new java.awt.Font("Beyond The Mountains", 0, 18)); // NOI18N
+        tabelaFuncionario.setFont(new java.awt.Font("Calibri Light", 0, 12)); // NOI18N
         tabelaFuncionario.setForeground(new java.awt.Color(255, 255, 255));
         tabelaFuncionario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

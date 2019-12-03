@@ -66,7 +66,7 @@ public class TelaVincularUsuario extends javax.swing.JFrame {
 
         tabelaUsuario.setBackground(new java.awt.Color(31, 31, 31));
         tabelaUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        tabelaUsuario.setFont(new java.awt.Font("Beyond The Mountains", 0, 12)); // NOI18N
+        tabelaUsuario.setFont(new java.awt.Font("Calibri Light", 0, 12)); // NOI18N
         tabelaUsuario.setForeground(new java.awt.Color(255, 255, 255));
         tabelaUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
