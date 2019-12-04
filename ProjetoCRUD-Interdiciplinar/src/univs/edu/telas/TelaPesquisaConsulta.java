@@ -5,6 +5,7 @@
  */
 package univs.edu.telas;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import univs.edu.consulta.Consulta;
@@ -60,7 +61,7 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Beyond The Mountains", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Status");
+        jLabel3.setText("Cliente");
 
         jLabel2.setFont(new java.awt.Font("Beyond The Mountains", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -151,7 +152,7 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                                 .addComponent(tfLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(54, 54, 54)
                                 .addComponent(jButton2)))
@@ -243,8 +244,24 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
        
     }//GEN-LAST:event_tfLoginKeyPressed
 
+    public List<Consulta> filtrarPaciente(List<Consulta> lista, String filtro){
+        List<Consulta> listaFiltrada = new ArrayList<>();
+        
+        for (Consulta consulta1 : lista) {
+            if(consulta1.getCliente().getNome().contains(filtro)){
+                listaFiltrada.add(consulta1);
+            }
+        }
+        
+        
+        return listaFiltrada;
+    }
+    
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        atualizarTabela(dao.pesquisar("status", tfLogin.getText()));
+        
+        
+        atualizarTabela(filtrarPaciente(dao.ListarConsultas(), tfLogin.getText()));
         
     }//GEN-LAST:event_jButton2ActionPerformed
 

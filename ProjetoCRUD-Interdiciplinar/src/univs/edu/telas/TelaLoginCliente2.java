@@ -11,8 +11,8 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import univs.edu.funcionario.Funcionario;
-import univs.edu.funcionario.FuncionarioDAO;
+import univs.edu.cliente.Cliente;
+import univs.edu.cliente.ClienteDAO;
 import univs.edu.telas.MenuPrincipal;
 
 
@@ -20,16 +20,16 @@ import univs.edu.telas.MenuPrincipal;
  *
  * @author Maria Eliene
  */
-public class TelaLoginCliente extends javax.swing.JFrame {
+public class TelaLoginCliente2 extends javax.swing.JFrame {
     
-    Funcionario funcionario;
-    FuncionarioDAO dao;
+    Cliente cliente;
+    ClienteDAO dao;
     
     private Point point = new Point();
-    public TelaLoginCliente() {
+    public TelaLoginCliente2() {
         initComponents();
-        funcionario = new Funcionario();
-        dao = new FuncionarioDAO();
+        cliente = new Cliente();
+        dao = new ClienteDAO();
     }
 
     /**
@@ -44,10 +44,8 @@ public class TelaLoginCliente extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        tfLogin = new univs.edu.outros.JTextFieldHint(new JTextField(), "Nome");
+        tfCpf = new univs.edu.outros.JTextFieldHint(new JTextField(), "Nome");
         ;
-        tfCPF = new univs.edu.outros.JPassWordFieldHint(new JPasswordField(),"Senha");
- ;
         jbEntrar = new javax.swing.JButton();
         jbSair = new javax.swing.JButton();
 
@@ -81,19 +79,11 @@ public class TelaLoginCliente extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/univs/edu/imagens/informações de login.png"))); // NOI18N
         jLabel2.setToolTipText("");
 
-        tfLogin.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        tfLogin.setForeground(new java.awt.Color(204, 204, 204));
-        tfLogin.addActionListener(new java.awt.event.ActionListener() {
+        tfCpf.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        tfCpf.setForeground(new java.awt.Color(204, 204, 204));
+        tfCpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfLogin(evt);
-            }
-        });
-
-        tfCPF.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        tfCPF.setForeground(new java.awt.Color(204, 204, 204));
-        tfCPF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfCPF(evt);
+                tfCpf(evt);
             }
         });
 
@@ -150,9 +140,7 @@ public class TelaLoginCliente extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tfLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE)
-                            .addComponent(tfCPF))))
+                        .addComponent(tfCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(25, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -167,10 +155,8 @@ public class TelaLoginCliente extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(72, 72, 72)
-                .addComponent(tfLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68)
-                .addComponent(tfCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addComponent(tfCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(140, 140, 140)
                 .addComponent(jbEntrar)
                 .addGap(37, 37, 37)
                 .addComponent(jbSair)
@@ -199,11 +185,11 @@ public class TelaLoginCliente extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    public Funcionario autenticarFunc(String login, String senha){
-   List <Funcionario> listaFuncionario = dao.ListarFuncionarios();
-        for (Funcionario funcionario1 : listaFuncionario) {
-            if(funcionario1.getUsuario().getLogin().equals(login) && funcionario1.getUsuario().getSenha().equals(senha)  ){
-                return funcionario1;
+    public Cliente autenticarCliente(String cpf){
+   List <Cliente> listaCliente = dao.ListarClientes();
+        for (Cliente cliente1 : listaCliente) {
+            if(cliente1.getCpf().equals(cpf)){
+                return cliente1;
             }
         }
         return null;
@@ -221,13 +207,9 @@ public class TelaLoginCliente extends javax.swing.JFrame {
         
     }//GEN-LAST:event_formMouseDragged
 
-    private void tfLogin(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfLogin
+    private void tfCpf(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCpf
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfLogin
-
-    private void tfCPF(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCPF
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfCPF
+    }//GEN-LAST:event_tfCpf
 
     private void jbEntrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbEntrarMouseEntered
         jbEntrar.setBackground(new Color(235, 235, 235));
@@ -240,10 +222,10 @@ public class TelaLoginCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jbEntrarMouseExited
 
     private void jbEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEntrarActionPerformed
-        if(!tfLogin.getText().isEmpty()&& !tfCPF.getText().isEmpty())
-        funcionario = autenticarFunc(tfLogin.getText(), tfCPF.getText());
-        if(funcionario != null){
-            MenuPrincipal menu = new MenuPrincipal(funcionario);
+        if(!tfCpf.getText().isEmpty())
+        cliente = autenticarCliente(tfCpf.getText());
+        if(cliente != null){
+            MenuCliente menu = new MenuCliente(cliente);
             menu.setVisible(true);
             dispose();
         }else{
@@ -283,14 +265,30 @@ public class TelaLoginCliente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaLoginCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLoginCliente2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaLoginCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLoginCliente2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaLoginCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLoginCliente2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaLoginCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLoginCliente2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -311,7 +309,7 @@ public class TelaLoginCliente extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaLoginCliente().setVisible(true);
+                new TelaLoginCliente2().setVisible(true);
             }
         });
     }
@@ -322,7 +320,6 @@ public class TelaLoginCliente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbEntrar;
     private javax.swing.JButton jbSair;
-    private javax.swing.JTextField tfCPF;
-    private javax.swing.JTextField tfLogin;
+    private javax.swing.JTextField tfCpf;
     // End of variables declaration//GEN-END:variables
 }
