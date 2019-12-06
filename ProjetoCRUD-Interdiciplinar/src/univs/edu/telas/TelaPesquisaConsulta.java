@@ -53,6 +53,8 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jlTotal1 = new javax.swing.JLabel();
+        jlTotal2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -102,6 +104,14 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tabelaConsulta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaConsultaMouseClicked(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                tabelaConsultaMouseReleased(evt);
+            }
+        });
         jScrollPane1.setViewportView(tabelaConsulta);
 
         jButton4.setFont(new java.awt.Font("Beyond The Mountains", 0, 18)); // NOI18N
@@ -133,6 +143,14 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/univs/edu/imagens/consulta.png"))); // NOI18N
 
+        jlTotal1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jlTotal1.setForeground(new java.awt.Color(255, 255, 255));
+        jlTotal1.setText("O valor total é");
+
+        jlTotal2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jlTotal2.setForeground(new java.awt.Color(255, 255, 255));
+        jlTotal2.setText("valor");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -160,7 +178,13 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel2)
-                        .addGap(206, 206, 206))))
+                        .addGap(206, 206, 206))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(152, 152, 152)
+                        .addComponent(jlTotal1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(70, 70, 70)
+                        .addComponent(jlTotal2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,7 +210,11 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(jButton3)
                     .addComponent(jButton4))
-                .addGap(87, 87, 87))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlTotal2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlTotal1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -241,7 +269,7 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void tfLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfLoginKeyPressed
-       
+        atualizarTabela(filtrarPaciente(dao.ListarConsultas(), tfLogin.getText()));
     }//GEN-LAST:event_tfLoginKeyPressed
 
     public List<Consulta> filtrarPaciente(List<Consulta> lista, String filtro){
@@ -264,6 +292,19 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
         atualizarTabela(filtrarPaciente(dao.ListarConsultas(), tfLogin.getText()));
         
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void tabelaConsultaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaConsultaMouseReleased
+          int[] linhas = tabelaConsulta.getSelectedRows();
+        int valor=0;
+        for (int linha : linhas) {
+            valor +=  (int) tabelaConsulta.getValueAt(linha, 6);
+        }
+        jlTotal2.setText(String.valueOf(valor) );
+    }//GEN-LAST:event_tabelaConsultaMouseReleased
+
+    private void tabelaConsultaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaConsultaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tabelaConsultaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -311,6 +352,8 @@ public class TelaPesquisaConsulta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jlTotal1;
+    private javax.swing.JLabel jlTotal2;
     private javax.swing.JTable tabelaConsulta;
     private javax.swing.JTextField tfLogin;
     // End of variables declaration//GEN-END:variables

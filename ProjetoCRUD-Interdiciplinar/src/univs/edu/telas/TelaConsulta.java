@@ -339,7 +339,7 @@ public class TelaConsulta extends javax.swing.JFrame {
             consulta.setTipoConsulta(String.valueOf(jcTipo.getSelectedItem()));
 
             ConsultaDAO.salvar(consulta);
-            dispose();
+            
             //!tfSalario.getText().isEmpty()
 
             //JOptionPane.showMessageDialog(null, jCalendar1.getDate());

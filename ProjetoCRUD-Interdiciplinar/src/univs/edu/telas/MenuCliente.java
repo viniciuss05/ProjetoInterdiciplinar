@@ -18,6 +18,7 @@ public class MenuCliente extends javax.swing.JFrame {
      */
     public MenuCliente(Cliente cliente) {
         initComponents();
+        nomeCliente.setText("Bem Vindo "+Cliente.cliente.getNome());
     }
     
     
@@ -34,6 +35,7 @@ public class MenuCliente extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
+        nomeCliente = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,28 +46,36 @@ public class MenuCliente extends javax.swing.JFrame {
             }
         });
 
+        nomeCliente.setFont(new java.awt.Font("Beyond The Mountains", 0, 36)); // NOI18N
+        nomeCliente.setForeground(new java.awt.Color(255, 255, 255));
+        nomeCliente.setText("Cliente");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 16, Short.MAX_VALUE)
+                .addComponent(nomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addContainerGap()
                 .addComponent(jButton1)
-                .addContainerGap(287, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
+                .addComponent(nomeCliente)
+                .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addContainerGap(225, Short.MAX_VALUE))
+                .addContainerGap(195, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       TelaPesquisaConsulta tela = new TelaPesquisaConsulta();
+       TelaHistorico tela = new TelaHistorico();
        tela.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -106,5 +116,6 @@ public class MenuCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel nomeCliente;
     // End of variables declaration//GEN-END:variables
 }

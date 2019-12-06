@@ -18,6 +18,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public MenuPrincipal(Funcionario funcionario) {
         initComponents();
         this.funcionario = funcionario;
+        jlNome.setText("Bem Vindo: "+ funcionario.getNome());
         nivelAcesso();
     }
     
@@ -25,6 +26,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         if(!funcionario.getCargo().equals("Administrador")){
             jmFuncionario.setVisible(false);
             jmUsuario.setVisible(false);
+            jbPesquisaFuncionario.setVisible(false);
             
         }
        
@@ -49,6 +51,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jbPesquisaCliente = new javax.swing.JButton();
         jbPesquisaFuncionario = new javax.swing.JButton();
         jbPesquisaDentista = new javax.swing.JButton();
+        jlNome = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmCadastros = new javax.swing.JMenu();
         jmUsuario = new javax.swing.JMenuItem();
@@ -68,94 +71,95 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setToolTipText("");
 
-        jbPesquisaConsulta.setBackground(new java.awt.Color(0, 0, 0));
+        jbPesquisaConsulta.setBackground(new java.awt.Color(31, 31, 31));
         jbPesquisaConsulta.setFont(new java.awt.Font("Beyond The Mountains", 0, 18)); // NOI18N
         jbPesquisaConsulta.setForeground(new java.awt.Color(255, 255, 255));
-        jbPesquisaConsulta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/univs/edu/imagens/dente.png"))); // NOI18N
-        jbPesquisaConsulta.setText("Pesquisa");
+        jbPesquisaConsulta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/univs/edu/imagens/botao consultas.png"))); // NOI18N
         jbPesquisaConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbPesquisaConsultaActionPerformed(evt);
             }
         });
 
-        jbMarcarConsulta.setBackground(new java.awt.Color(0, 0, 0));
+        jbMarcarConsulta.setBackground(new java.awt.Color(31, 31, 31));
         jbMarcarConsulta.setFont(new java.awt.Font("Beyond The Mountains", 0, 18)); // NOI18N
         jbMarcarConsulta.setForeground(new java.awt.Color(255, 255, 255));
-        jbMarcarConsulta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/univs/edu/imagens/dente.png"))); // NOI18N
-        jbMarcarConsulta.setText("Consulta");
+        jbMarcarConsulta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/univs/edu/imagens/botao marcar consulta.png"))); // NOI18N
         jbMarcarConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbMarcarConsultaActionPerformed(evt);
             }
         });
 
-        jbPesquisaCliente.setBackground(new java.awt.Color(0, 0, 0));
+        jbPesquisaCliente.setBackground(new java.awt.Color(31, 31, 31));
         jbPesquisaCliente.setFont(new java.awt.Font("Beyond The Mountains", 0, 18)); // NOI18N
         jbPesquisaCliente.setForeground(new java.awt.Color(255, 255, 255));
-        jbPesquisaCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/univs/edu/imagens/dente.png"))); // NOI18N
-        jbPesquisaCliente.setText("Pesquisa Cliente");
+        jbPesquisaCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/univs/edu/imagens/botao clientes.png"))); // NOI18N
         jbPesquisaCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbPesquisaClienteActionPerformed(evt);
             }
         });
 
-        jbPesquisaFuncionario.setBackground(new java.awt.Color(0, 0, 0));
+        jbPesquisaFuncionario.setBackground(new java.awt.Color(31, 31, 31));
         jbPesquisaFuncionario.setFont(new java.awt.Font("Beyond The Mountains", 0, 18)); // NOI18N
         jbPesquisaFuncionario.setForeground(new java.awt.Color(255, 255, 255));
-        jbPesquisaFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/univs/edu/imagens/dente.png"))); // NOI18N
-        jbPesquisaFuncionario.setText("Pesquisa Funcionario");
+        jbPesquisaFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/univs/edu/imagens/botao funcionarios.png"))); // NOI18N
         jbPesquisaFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbPesquisaFuncionarioActionPerformed(evt);
             }
         });
 
-        jbPesquisaDentista.setBackground(new java.awt.Color(0, 0, 0));
+        jbPesquisaDentista.setBackground(new java.awt.Color(31, 31, 31));
         jbPesquisaDentista.setFont(new java.awt.Font("Beyond The Mountains", 0, 18)); // NOI18N
         jbPesquisaDentista.setForeground(new java.awt.Color(255, 255, 255));
-        jbPesquisaDentista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/univs/edu/imagens/dente.png"))); // NOI18N
-        jbPesquisaDentista.setText("Pesquisa Dentista");
+        jbPesquisaDentista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/univs/edu/imagens/botao dentistas.png"))); // NOI18N
         jbPesquisaDentista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbPesquisaDentistaActionPerformed(evt);
             }
         });
 
+        jlNome.setFont(new java.awt.Font("Beyond The Mountains", 0, 18)); // NOI18N
+        jlNome.setForeground(new java.awt.Color(255, 255, 255));
+        jlNome.setText("Usuario");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(76, 76, 76)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbPesquisaConsulta)
-                    .addComponent(jbPesquisaFuncionario))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbPesquisaCliente)
-                    .addComponent(jbPesquisaDentista))
-                .addGap(69, 69, 69))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(380, 380, 380)
-                .addComponent(jbMarcarConsulta)
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(jbPesquisaConsulta)
+                        .addGap(50, 50, 50)
+                        .addComponent(jbMarcarConsulta)
+                        .addGap(70, 70, 70)
+                        .addComponent(jbPesquisaCliente)
+                        .addGap(62, 62, 62)
+                        .addComponent(jbPesquisaDentista))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(115, 115, 115)
+                        .addComponent(jlNome, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(93, 93, 93)
+                .addComponent(jbPesquisaFuncionario)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbPesquisaConsulta)
-                    .addComponent(jbPesquisaCliente))
-                .addGap(18, 18, 18)
-                .addComponent(jbMarcarConsulta)
-                .addGap(51, 51, 51)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbPesquisaFuncionario)
-                    .addComponent(jbPesquisaDentista))
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(jlNome, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jbMarcarConsulta, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jbPesquisaConsulta, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jbPesquisaCliente, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jbPesquisaDentista, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jbPesquisaFuncionario, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(318, 318, 318))
         );
 
         jMenuBar1.setBackground(new java.awt.Color(31, 31, 31));
@@ -206,11 +210,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,19 +250,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void jbPesquisaConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPesquisaConsultaActionPerformed
         TelaPesquisaConsulta tela = new TelaPesquisaConsulta();
         tela.setVisible(true);
-        dispose();
+        
     }//GEN-LAST:event_jbPesquisaConsultaActionPerformed
 
     private void jbMarcarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMarcarConsultaActionPerformed
         TelaConsulta tela = new TelaConsulta();
         tela.setVisible(true);
-        dispose();
+        
     }//GEN-LAST:event_jbMarcarConsultaActionPerformed
 
     private void jbPesquisaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPesquisaClienteActionPerformed
         TelaPesquisaCliente tela = new TelaPesquisaCliente();
         tela.setVisible(true);
-        dispose();
+      
     }//GEN-LAST:event_jbPesquisaClienteActionPerformed
 
     private void jbPesquisaFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPesquisaFuncionarioActionPerformed
@@ -327,6 +328,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jbPesquisaConsulta;
     private javax.swing.JButton jbPesquisaDentista;
     private javax.swing.JButton jbPesquisaFuncionario;
+    private javax.swing.JLabel jlNome;
     private javax.swing.JMenu jmCadastros;
     private javax.swing.JMenuItem jmFuncionario;
     private javax.swing.JMenuItem jmUsuario;

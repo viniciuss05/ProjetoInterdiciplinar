@@ -26,6 +26,7 @@ public class TelaLogin extends javax.swing.JFrame {
     FuncionarioDAO dao;
     
     private Point point = new Point();
+    
     public TelaLogin() {
         initComponents();
         funcionario = new Funcionario();

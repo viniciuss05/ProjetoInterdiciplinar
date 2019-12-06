@@ -225,6 +225,7 @@ public class TelaLoginCliente2 extends javax.swing.JFrame {
         if(!tfCpf.getText().isEmpty())
         cliente = autenticarCliente(tfCpf.getText());
         if(cliente != null){
+            Cliente.cliente = cliente;
             MenuCliente menu = new MenuCliente(cliente);
             menu.setVisible(true);
             dispose();
@@ -245,6 +246,9 @@ public class TelaLoginCliente2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jbSairMouseExited
 
     private void jbSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSairActionPerformed
+        
+        TelaInicio telaInicio = new TelaInicio();
+        telaInicio.setVisible(true);
         dispose();
     }//GEN-LAST:event_jbSairActionPerformed
 

@@ -25,10 +25,10 @@ public class ConsultaDAO {
         transacao = sessao.beginTransaction();
         if (consulta.getIdConsulta() == 0) {
             sessao.save(consulta);
-            JOptionPane.showMessageDialog(null, "Consulta cadastrado com sucesso");
+            JOptionPane.showMessageDialog(null, "Consulta cadastrada com sucesso");
         } else {
             editar(consulta);
-            JOptionPane.showMessageDialog(null, "Consulta editado com sucesso");
+            JOptionPane.showMessageDialog(null, "Consulta editada com sucesso");
         }
         transacao.commit();
         sessao.close();
@@ -66,7 +66,6 @@ public class ConsultaDAO {
 
         return consulta != null ? consulta : null;
     }
-     
 
     public List<Consulta> ListarConsultas() {
         sessao = HibernateUtil.getSessionFactory().openSession();
@@ -75,19 +74,23 @@ public class ConsultaDAO {
         sessao.close();
         return consultas;
     }
-    public List<Consulta> pesquisar (String campo, String valor){
-        
+
+    public List<Consulta> pesquisar(String campo, String valor) {
+
         sessao = HibernateUtil.getSessionFactory().openSession();
         transacao = sessao.beginTransaction();
-        List<Consulta> consultas = sessao.createCriteria(Consulta.class).add(Restrictions.ilike(campo, "%"+valor+"%")).list();
+        List<Consulta> consultas = sessao.createCriteria(Consulta.class).add(Restrictions.ilike(campo, "%" + valor + "%")).list();
         sessao.close();
-        
+
         return consultas;
-        }
-   
+    }
+    public List<Consulta> pesquisar(String campo, int id) {
 
+        sessao = HibernateUtil.getSessionFactory().openSession();
+        transacao = sessao.beginTransaction();
+        List<Consulta> consultas = sessao.createCriteria(Consulta.class).add(Restrictions.eq(campo, id)).list();
+        sessao.close();
 
-    
-
- 
+        return consultas;
+    }
 }

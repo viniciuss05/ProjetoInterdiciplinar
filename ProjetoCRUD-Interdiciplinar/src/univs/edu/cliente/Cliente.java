@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 @Entity
 public class Cliente {
@@ -18,7 +19,10 @@ public class Cliente {
     private String nome;
     
     @Column(length = 20, nullable = false)
-    private String cpf;
+    private String cpf;     
+    
+    @Transient
+    public static Cliente cliente;
     
    
 
