@@ -19,6 +19,7 @@
         <mapping class="univs.edu.cliente.Cliente"/>
         <mapping class="univs.edu.dentista.Dentista"/>
         <mapping class="univs.edu.consulta.Consulta"/>
+        <mapping class="univs.edu.ticket.Ticket"/>
         
         
     </session-factory>

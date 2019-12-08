@@ -264,7 +264,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jbSairMouseExited
 
     private void jbSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSairActionPerformed
-        dispose();
+    dispose();
     }//GEN-LAST:event_jbSairActionPerformed
 
     /**

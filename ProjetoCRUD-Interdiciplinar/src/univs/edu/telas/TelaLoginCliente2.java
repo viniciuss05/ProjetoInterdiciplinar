@@ -246,10 +246,8 @@ public class TelaLoginCliente2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jbSairMouseExited
 
     private void jbSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSairActionPerformed
-        
-        TelaInicio telaInicio = new TelaInicio();
-        telaInicio.setVisible(true);
         dispose();
+        
     }//GEN-LAST:event_jbSairActionPerformed
 
     /**

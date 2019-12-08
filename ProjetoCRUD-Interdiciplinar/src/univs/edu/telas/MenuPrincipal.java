@@ -52,6 +52,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jbPesquisaFuncionario = new javax.swing.JButton();
         jbPesquisaDentista = new javax.swing.JButton();
         jlNome = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmCadastros = new javax.swing.JMenu();
         jmUsuario = new javax.swing.JMenuItem();
@@ -125,6 +127,20 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jlNome.setForeground(new java.awt.Color(255, 255, 255));
         jlNome.setText("Usuario");
 
+        jButton1.setText("TICKETS");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Deslogar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -132,17 +148,22 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jbPesquisaConsulta)
-                        .addGap(50, 50, 50)
-                        .addComponent(jbMarcarConsulta)
-                        .addGap(70, 70, 70)
-                        .addComponent(jbPesquisaCliente)
-                        .addGap(62, 62, 62)
-                        .addComponent(jbPesquisaDentista))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(115, 115, 115)
-                        .addComponent(jlNome, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jlNome, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton2)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButton1)
+                                    .addComponent(jbPesquisaConsulta))
+                                .addGap(50, 50, 50)
+                                .addComponent(jbMarcarConsulta)
+                                .addGap(70, 70, 70)
+                                .addComponent(jbPesquisaCliente)
+                                .addGap(62, 62, 62)
+                                .addComponent(jbPesquisaDentista)))))
                 .addGap(93, 93, 93)
                 .addComponent(jbPesquisaFuncionario)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -159,7 +180,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addComponent(jbPesquisaCliente, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jbPesquisaDentista, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jbPesquisaFuncionario, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(318, 318, 318))
+                .addGap(56, 56, 56)
+                .addComponent(jButton1)
+                .addGap(167, 167, 167)
+                .addComponent(jButton2)
+                .addGap(49, 49, 49))
         );
 
         jMenuBar1.setBackground(new java.awt.Color(31, 31, 31));
@@ -278,6 +303,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jbPesquisaDentistaActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        TelaTiketRespostas telaresposta = new TelaTiketRespostas(funcionario);
+        telaresposta.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        TelaLogin telaloguin = new TelaLogin();
+        telaloguin.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -314,6 +350,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
